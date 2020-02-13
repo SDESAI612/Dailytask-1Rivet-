@@ -6,13 +6,17 @@ import { EmployeesFormContainer } from './employees-form-container/employees-for
 import { EmployeesListContainer } from './employees-list-container/employees-list-container';
 import {  EmployeeFormPresentation } from './employees-form-container/employee-form-presentation/employee-form-presentation';
 import { EmployeesListPresentation } from './employees-list-container/employees-list-presentation/employees-list-presentation';
-
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [ EmployeesFormContainer, EmployeeFormPresentation, EmployeesListContainer, EmployeesListPresentation],
   imports: [
     CommonModule,
-    EmployeesRoutingModule
+    EmployeesRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
+    HttpClientModule 
   ],
   exports: [
     EmployeesFormContainer,

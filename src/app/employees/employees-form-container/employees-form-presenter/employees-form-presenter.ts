@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class EmployeesPresenterService {
 
+  private employee:FormGroup;
   constructor(private fb: FormBuilder) { }
 
-  employee:FormGroup = this.fb.group({
+ public buildEmployeeForm():FormGroup{
+    debugger;
+    return this.fb.group({
     fullName: [''],
     emailAddress: [''],
     mobileNumber: [''],
@@ -18,5 +19,6 @@ export class EmployeesPresenterService {
     gender: [''],
     employeeType: ['false']
   });
-
+  // return this.employee  
+}
 }

@@ -1,27 +1,34 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms'
+import { FormGroup } from '@angular/forms'
 import { EmployeesPresenterService } from '../employees-form-presenter/employees-form-presenter';
-import { Employee } from '../../employee.model';
 
 @Component({
   selector: 'app-employee-form-presentation',
   templateUrl: './employee-form-presentation.html',
-  styleUrls: ['./employee-form-presentation.scss']
+  styleUrls: ['./employee-form-presentation.scss'],
+  providers:[EmployeesPresenterService]
 })
 export class EmployeeFormPresentation implements OnInit {
 
   employeeForm: FormGroup;
   @Output() addEvent = new EventEmitter<FormGroup>(); 
  
-  constructor(private fb: FormBuilder, private empPresenter: EmployeesPresenterService) { }
+  constructor( private employeeFormPresenter: EmployeesPresenterService) { }
 
     addData()
     {
-      this.addEvent.emit(this.employeeForm);
+      debugger
+      // this.employeeForm=this.employeeFormPresenter.buildEmployeeForm()
+      this.addEvent.emit(this.employeeForm.value);
+    
     }
 
   ngOnInit() {
-    this.employeeForm=this.empPresenter.employee;
+    debugger;
+   this.employeeForm=this.employeeFormPresenter.buildEmployeeForm();
+    console.log(this.employeeForm);
+    
   }
+
 
 }

@@ -13,9 +13,10 @@ export class EmployeesFormContainer implements OnInit {
   employees:FormGroup;
   ngOnInit() {
   }
+
   addData($event)
-  {
+  { debugger
     this.employees=$event;
-    this.emp.postDetails($event);
+    this.emp.postDetails($event).subscribe();
   }
 }
