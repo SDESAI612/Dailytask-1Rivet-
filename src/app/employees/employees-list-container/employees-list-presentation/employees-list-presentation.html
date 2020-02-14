@@ -4,6 +4,8 @@
     <p>The table contains the record of the employees of the company</p>
     <br>
     <button routerLink="Fetch">Add</button><br><br>
+    <input type="text" class="form-control" placeholder="Search" (keyup)=searchData($event.target.value)/>
+    <br><br>
 </div>
 <table class="table table-bordered">
     <thead>

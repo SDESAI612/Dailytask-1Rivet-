@@ -4,6 +4,7 @@ import { EmployeesService } from '../employees.service'
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { StringifyOptions } from 'querystring';
+import { environment } from '../../../environments/environment'
 
 @Component({
   selector: 'app-employees-form-container',
@@ -16,7 +17,7 @@ export class EmployeesFormContainer implements OnInit {
   public updateId;
   public employees:FormGroup;
   public employeesUpdated: FormGroup;
-  apiUrl="http://localhost:3000/employeeData"
+  public apiUrl:String = environment.apiUrl;
   empData;
   getDataJson;
 
@@ -48,7 +49,7 @@ export class EmployeesFormContainer implements OnInit {
     this.emp.editDetails(employeeObject,this.id).subscribe();
   }
 
-  getEmployee(empId)
+  getEmployee(empId): void 
   {
     debugger;
     this.emp.getById(this.id).subscribe(

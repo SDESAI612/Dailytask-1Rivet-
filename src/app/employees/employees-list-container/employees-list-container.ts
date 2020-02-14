@@ -10,7 +10,7 @@ import { Employee } from '../employee.model';
 })
 export class EmployeesListContainer implements OnInit {
 
-  empObj:any;
+  empObj;
   // employeeDetails$ = new Observable<Employee[]>();
 
   constructor(private emp:EmployeesService) {
@@ -48,6 +48,11 @@ export class EmployeesListContainer implements OnInit {
     {
       this.GetDetails();
     });
+  }
+
+  searchData(searchData)
+  {
+    this.empObj = this.emp.searchData();
   }
 
 }

@@ -10,17 +10,18 @@ import { Employee } from '../../employee.model';
 })
 export class EmployeesListPresentation implements OnInit {
 
-  id:number;
+  public id:number;
   // @Input() employees$ : Observable<Employee[]>;
   @Input() empObj;
   @Output() deleteEvent = new EventEmitter<number>();
-  
+  @Output() searchQuery = new EventEmitter<string>();
+
   constructor() { 
     // console.log(this.employees$);
   }
 
   ngOnInit() {
-  
+    
   }
 
   /**
@@ -29,12 +30,11 @@ export class EmployeesListPresentation implements OnInit {
    */
   idDelete(id:number): void
   {
-    // debugger;
     this.deleteEvent.emit(id); 
   }
 
-  editData(employeeId: number)
+  searchData(searchText:string)
   {
-    
+  this.searchQuery.emit(searchText);
   }
 }

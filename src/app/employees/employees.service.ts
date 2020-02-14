@@ -9,9 +9,8 @@ import { FormGroup } from '@angular/forms';
 })
 export class EmployeesService {
 
- private id: number =null;  
- private apiUrl ="http://localhost:3000/employeeData";
- apibaseUrl: "http://localhost:3000/employeeData"
+ private id: number =null;
+ private apiUrl = environment.apiUrl;  
 
   constructor(private http: HttpClient) { }
 
@@ -22,7 +21,7 @@ export class EmployeesService {
    public GetDetails(): Observable<Employee[]>
     {   
       debugger
-      return this.http.get<Employee[]>(`http://localhost:3000/employeeData`);
+      return this.http.get<Employee[]>(this.apiUrl);
     } 
 
     /**
@@ -55,5 +54,9 @@ export class EmployeesService {
     {
       debugger;
       return this.http.put(`${this.apiUrl}/${id}`,employee)
+    }
+    searchData(searchData)
+    {
+        return this.http.get(`${this.apiUrl}?q=searchData());
     }
 }
