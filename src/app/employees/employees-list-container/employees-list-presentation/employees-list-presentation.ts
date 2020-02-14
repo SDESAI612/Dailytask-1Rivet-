@@ -14,6 +14,7 @@ export class EmployeesListPresentation implements OnInit {
   // @Input() employees$ : Observable<Employee[]>;
   @Input() empObj;
   @Output() deleteEvent = new EventEmitter<number>();
+  
   constructor() { 
     // console.log(this.employees$);
   }

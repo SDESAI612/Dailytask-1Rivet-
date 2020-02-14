@@ -3,6 +3,7 @@ import { FormGroup } from '@angular/forms';
 import { EmployeesService } from '../employees.service'
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { StringifyOptions } from 'querystring';
 
 @Component({
   selector: 'app-employees-form-container',
@@ -11,11 +12,13 @@ import { HttpClient } from '@angular/common/http';
 })
 export class EmployeesFormContainer implements OnInit {
 
-  public id;
+  public id:number;
   public updateId;
   public employees:FormGroup;
+  public employeesUpdated: FormGroup;
   apiUrl="http://localhost:3000/employeeData"
-  empData: Object;
+  empData;
+  getDataJson;
 
   constructor(private emp: EmployeesService, private routes: ActivatedRoute,private http:HttpClient) { }
  
@@ -23,7 +26,7 @@ export class EmployeesFormContainer implements OnInit {
     this.id = this.routes.snapshot.params['id'];
     if(this.id)
       {
-        this.getEmployee(this.id)
+        this.getEmployee(Number(this.id))
 
       }
   }
@@ -35,12 +38,26 @@ export class EmployeesFormContainer implements OnInit {
   addData(employeeObject: FormGroup):void
   { 
     this.employees=employeeObject;
-    this.emp.postDetails(this.employees).subscribe();
+    this.emp.postDetails(this.employees.value).subscribe();
+  }
+
+  editData(employeeObject: FormGroup):void
+  { debugger;
+    alert(JSON.stringify(employeeObject));
+    
+    this.emp.editDetails(employeeObject,this.id).subscribe();
   }
 
   getEmployee(empId)
   {
-    console.log(empId)
+    debugger;
+    this.emp.getById(this.id).subscribe(
+      data=>{
+        console.log(JSON.stringify(data));
+        this.getDataJson=data;
+      }
+    );
+    
   }
     
   

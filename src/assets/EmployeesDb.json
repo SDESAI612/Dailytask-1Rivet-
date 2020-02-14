@@ -34,7 +34,7 @@
       "id": 3
     },
     {
-      "fullName": "Kiran",
+      "fullName": "ketan",
       "emailAddress": "kiran@123",
       "mobileNumber": "789462588",
       "cityName": "Billimora",
@@ -56,14 +56,6 @@
       "id": 7
     },
     {
-      "fullName": "Amit",
-      "emailAddress": "Amit@123",
-      "mobileNumber": "938237622",
-      "cityName": "Valsad",
-      "dateHire": "2020-02-03",
-      "departmentName": "angular",
-      "gender": "MALE",
-      "employeeType": "false",
       "id": 8
     },
     {
@@ -78,14 +70,6 @@
       "id": 10
     },
     {
-      "fullName": "Shiv Desai",
-      "emailAddress": "shivdesai612@gmail.com",
-      "mobileNumber": "07567 584736",
-      "cityName": "valsad",
-      "dateHire": "2020-02-24",
-      "departmentName": "angular",
-      "gender": "MALE",
-      "employeeType": "false",
       "id": 11
     }
   ]

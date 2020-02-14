@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment'
 import { Observable } from 'rxjs';
 import { Employee } from './employee.model';
+import { FormGroup } from '@angular/forms';
 @Injectable({
   providedIn: 'root'
 })
@@ -46,11 +47,13 @@ export class EmployeesService {
 
     getById(id:number)
     {
-      return this.http.delete(this.apiUrl+'/'+this.id);
+      debugger
+      return this.http.get(`${this.apiUrl}/${id}`);
     }
 
-    public editDetails(id)
+    public editDetails(employee:FormGroup,id)
     {
-      // return this.http.put(this.apiUrl+'/'+this.id,)
+      debugger;
+      return this.http.put(`${this.apiUrl}/${id}`,employee)
     }
 }
