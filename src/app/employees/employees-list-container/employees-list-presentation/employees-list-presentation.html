@@ -1,0 +1,39 @@
+<div class="container">
+    <h2>Employee Records</h2>
+    <br><br>
+    <p>The table contains the record of the employees of the company</p>
+    <br>
+    <button routerLink="Fetch">Add</button><br><br>
+    <input type="text" class="form-control" placeholder="Search" (keyup)="searchData($event.target.value)" />
+    <br><br>
+</div>
+<table class="table table-bordered ">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Full Name<span style="cursor: pointer; ">
+                </span>
+            </th>
+            <th>Email</th>
+            <th>Mobile</th>
+            <th>City</th>
+            <th>Department</th>
+            <th>Operations</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let employeeData of empObj$">
+            <th> {{employeeData.id}} </th>
+            <th>{{employeeData.fullName}}</th>
+            <th>{{employeeData.emailAddress}}</th>
+            <th>{{employeeData.mobileNumber}}</th>
+            <th>{{employeeData.cityName}}</th>
+            <th>{{employeeData.departmentName}}</th>
+            <th> <button (click)="idDelete(employeeData.id) ">Delete</button>
+                <a routerLink="Edit/{{employeeData.id}}">edit</a>
+            </th>
+        </tr>
+    </tbody>
+</table>
+
+<!-- <router-outlet></router-outlet> -->
