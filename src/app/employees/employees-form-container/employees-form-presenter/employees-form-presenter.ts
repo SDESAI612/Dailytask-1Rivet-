@@ -10,13 +10,13 @@ export class EmployeesPresenterService {
  {
     debugger;
     return this.fb.group({
-    fullName: ['',],
-    emailAddress: ['',],
-    mobileNumber: ['',],
-    cityName: [''],
-    dateHire: [''],
-    departmentName: [''],
-    gender: [''],
+    fullName: ['',[Validators.required,Validators.minLength(4)]],
+    emailAddress: ['',[Validators.required]],
+    mobileNumber: ['',[Validators.required,Validators.minLength(10),Validators.maxLength(10)]],
+    cityName: ['',[Validators.required]],
+    dateHire: ['',[Validators.required]],
+    departmentName: ['',Validators.required],
+    gender: ['',[Validators.required]],
     employeeType: [false]
   });
 }

@@ -11,6 +11,7 @@ import { Employee } from '../../employee.model';
 })
 export class EmployeeFormPresentation implements OnInit {
 
+  public submitted:boolean;
   public employeeForm: FormGroup;
   public employeeData: Employee
   @Output() addEvent = new EventEmitter<Employee>(); 
@@ -40,9 +41,21 @@ export class EmployeeFormPresentation implements OnInit {
    * This funtion will add data to JSON file
    */  
  public addData(): void
-    {  
+    { this.submitted = true;
+
+      // stop here if form is invalid
+      if (this.employeeForm.invalid) {
+          return;
+      }
+      else
+      {
         this.addEvent.emit(this.employeeForm.value);
+      } 
+       
     }
       
- 
+     public formControl() { 
+      return this.employeeForm.controls; 
+    }
+
 }

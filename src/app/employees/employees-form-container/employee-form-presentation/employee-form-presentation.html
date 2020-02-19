@@ -9,6 +9,10 @@
                         <span class="input-group-text"> <i class="fa fa-user"></i> </span>
                     </div>
                     <input formControlName="fullName" class="form-control" placeholder="Full name" type="text">
+                    <div *ngIf="submitted && formControl.firstName.errors" class="invalid-feedback">
+                        <div *ngIf="formControl.firstName.errors.required">*First Name is required</div>
+                        <div *ngIf="formControl.firstName.errors.minlength  ">*min 4 characters required</div>
+                    </div>
                 </div>
                 <!-- form-group// -->
                 <div class="form-group input-group">
@@ -16,6 +20,9 @@
                         <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
                     </div>
                     <input formControlName="emailAddress" class="form-control" placeholder="Email address" type="email">
+                    <div *ngIf="submitted && formControl.emailAddress.errors" class="invalid-feedback">
+                        <div *ngIf="formControl.emailAddress.errors.required">*Email is required</div>
+                    </div>
                 </div>
                 <!-- form-group// -->
                 <div class="form-group input-group">
@@ -24,6 +31,16 @@
                     </div>
 
                     <input formControlName="mobileNumber" class="form-control" placeholder="Phone number" type="text">
+                    <div>
+                        <div *ngIf="submitted && formControl.mobileNumber.errors" >
+                            <div *ngIf="formControl.MobileNumber.errors.required">*mobile number is required</div>
+                            <div *ngIf="formControl.mobileNumber.errors.minlength">
+                             <div  *ngIf="formControl.mobileNumber.errors.maxlength">   
+                                *mobile Number should be of 10 characters
+                            </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <!-- form-group// -->
                 <div class="form-group input-group">
@@ -39,6 +56,9 @@
                     <br> <br> <br>
                     <div>
                         <input type="date" formControlName="dateHire" />
+                        <div *ngIf="submitted && formControl.dateHire.errors" class="invalid-feedback">
+                            <div *ngIf="formControl.dateHire.errors.required">*Date of hire is required</div>
+                        </div>
                     </div>
                     <br>
 
@@ -47,7 +67,9 @@
                         <input type="radio" formControlName="gender" value="MALE" />Male<br>
                         <input type="radio" formControlName="gender" value="Female" />Female<br>
                         <input type="radio" formControlName="gender" value="Others" />Other<br>
-
+                        <div *ngIf="submitted && formControl.gender.errors" class="invalid-feedback">
+                            <div *ngIf="formControl.gender.errors.required">*Please enter your gender</div>
+                        </div>
                     </div>
                     <br>
 
@@ -61,7 +83,10 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
                         </div>
-                        <input formControlName="cityName" class="form-control" placeholder="City" type="email">
+                        <input formControlName="cityName" class="form-control" placeholder="City" type="text">
+                        <div *ngIf="submitted && formControl.cityName.errors" class="invalid-feedback">
+                            <div *ngIf="formControl.cityName.errors.required">*City  is required</div>
+                        </div>
                     </div>
                 </div>
                 <!-- form-group end.// -->
