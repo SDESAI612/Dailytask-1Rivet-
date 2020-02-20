@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+
+import { Employee } from '../employee.model';
 import { EmployeesService } from '../employees.service';
 import { Observable } from 'rxjs';
-import { Employee } from '../employee.model';
 
 @Component({
   selector: 'app-employees-list-container',
@@ -44,7 +45,7 @@ export class EmployeesListContainer implements OnInit {
    * This method get the values searched from presentation
    * @param searchData This the query we search
    */
-  public searchData(searchData)
+  public searchData(searchData:string):void
   {
     this.employeeDetails$ = this.emp.searchData(searchData)
    

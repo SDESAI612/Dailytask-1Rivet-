@@ -18,7 +18,7 @@
       "cityName": "Valsad",
       "dateHire": "2020-02-17",
       "departmentName": ".Net",
-      "gender": "MALE",
+      "gender": "Female",
       "employeeType": false,
       "id": 2
     },
@@ -29,7 +29,7 @@
       "cityName": "21sws",
       "dateHire": "2020-02-03",
       "departmentName": "Mobile",
-      "gender": "Female",
+      "gender": "Male",
       "employeeType": "false",
       "id": 4
     },
@@ -40,7 +40,7 @@
       "cityName": "adfsf",
       "dateHire": "2020-02-03",
       "departmentName": "Mobile",
-      "gender": "Female",
+      "gender": "Male",
       "employeeType": "false",
       "id": 5
     },

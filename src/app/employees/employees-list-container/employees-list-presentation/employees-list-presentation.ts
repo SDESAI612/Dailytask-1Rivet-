@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Observable } from 'rxjs';
+
 import { Employee } from '../../employee.model';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -12,10 +13,12 @@ export class EmployeesListPresentation implements OnInit {
 
   public id:number;
   @Input() public empObj$:Observable<Employee[]>;
-  @Output() deleteEvent = new EventEmitter<number>();
-  @Output() searchQuery = new EventEmitter<string>();
+  @Output() delete;  
+  @Output() searchQuery; 
 
   constructor() { 
+    this.delete = new EventEmitter<number>();
+    this.searchQuery = new EventEmitter<string>();
   }
 
   ngOnInit() {
@@ -28,7 +31,7 @@ export class EmployeesListPresentation implements OnInit {
    */
   idDelete(id:number): void
   {
-    this.deleteEvent.emit(id); 
+    this.delete.emit(id); 
   }
 
   /**

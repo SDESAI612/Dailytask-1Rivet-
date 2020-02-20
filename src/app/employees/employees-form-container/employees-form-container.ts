@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+
 import { EmployeesService } from '../employees.service'
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { environment } from '../../../environments/environment'
-import { EmployeesModule } from '../employees.module';
 import { Employee } from '../employee.model';
 import { Observable } from 'rxjs';
 

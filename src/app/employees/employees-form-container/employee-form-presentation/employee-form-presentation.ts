@@ -1,7 +1,8 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { FormGroup } from '@angular/forms'
-import { EmployeesPresenterService } from '../employees-form-presenter/employees-form-presenter';
+
 import { Employee } from '../../employee.model';
+import { EmployeesPresenterService } from '../employees-form-presenter/employees-form-presenter';
 
 @Component({
   selector: 'app-employee-form-presentation',
@@ -53,7 +54,9 @@ export class EmployeeFormPresentation implements OnInit {
       } 
        
     }
-      
+      /**
+       * This will return form control
+       */
      public formControl() { 
       return this.employeeForm.controls; 
     }

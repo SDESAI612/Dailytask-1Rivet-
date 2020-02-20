@@ -1,3 +1,2 @@
-<!-- <p>employees-list-container works!</p> -->
-<!-- <app-employees-list-presentation [employees$]="employeesDetails$"> </app-employees-list-presentation> -->
-<app-employees-list-presentation-ui [empObj$]="employeeDetails$ | async" (deleteEvent)="idDelete($event)" (searchQuery)="searchData($event)"> </app-employees-list-presentation-ui>
+<app-employees-list-presentation-ui [empObj$]="employeeDetails$ | async" (delete)="idDelete($event)" (searchQuery)="searchData($event)">
+</app-employees-list-presentation-ui>
