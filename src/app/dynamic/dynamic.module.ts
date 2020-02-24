@@ -17,8 +17,7 @@ import { OverlayModule } from '@angular/cdk/overlay';
     DynamicRoutingModule,
     RouterModule,
     PortalModule,
-    OverlayModule
-
+    OverlayModule,
     
   ],
   entryComponents:[DynamicComponent]

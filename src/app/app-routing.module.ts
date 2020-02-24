@@ -1,11 +1,15 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { EmojiComponent } from './emoji/emoji.component';
 
 
 const routes: Routes = [
   {
     path:"Dynamic",
-    loadChildren: () => import('./dynamic/dynamic.module').then(m=>m.DynamicModule)
+    loadChildren: () => import('./dynamic/dynamic.module').then(m=>m.DynamicModule),
+  },
+   { path:"Pipe",
+     component: EmojiComponent,
   }
 ];
 
